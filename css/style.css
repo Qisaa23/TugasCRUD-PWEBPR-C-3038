@@ -32,7 +32,7 @@ body {
 
 .container .left {
     position: relative;
-    width: 250px;
+    width: 200px;
     height: 100%;
     background-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(5px);
@@ -105,7 +105,7 @@ body {
     transition: .3s ease;
 }
 
-.container .left header nav ul li:first-child a,
+.container .left header nav ul li:first-child a.dashboard,
 .container .left header nav ul li a:hover {
     transition: 0s;
     background: #edefff;
@@ -171,6 +171,7 @@ body {
 
 .container .right .canscroll{
     overflow-y: auto;
+    height: 100%;
 }
 
 /* top start */
@@ -250,8 +251,9 @@ body {
 }
 
 .container .left .user h2 {
-    font-size: 1.1em;
+    font-size: 18px;
     line-height: 18px;
+    margin-left: 5px;
     white-space: nowrap;
     cursor: pointer;
 }
@@ -271,6 +273,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 5px;
 }
 
 .container .left .user .toggle {
@@ -285,10 +288,10 @@ body {
     display: none;
 }
 
-.container .right .canscroll .friend-table {
+.container .right .canscroll .task-table {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -297,59 +300,62 @@ body {
     margin-bottom: 20px;
 }
 
-.container .right .canscroll .friend-table .title-table{
+.container .right .canscroll .task-table .title-table{
     display: flex;
-    gap: 890px;
+    gap: 750px;
 }
 
-.container .right .canscroll .friend-table .title-table h2{
+.container .right .canscroll .task-table .title-table h2{
     font-size: 20px;
 }
 
-.container .right .canscroll .friend-table .table {
+.container .right .canscroll .task-table .table {
     margin-top: 15px;
     border: 1px solid lightgray ;
     border-radius:6px;
     width: 100%;
 }
 
-.container .right .canscroll .friend-table .title-table button{
-    width: auto;
+.container .right .canscroll .task-table .title-table a {
+    display: inline-block; 
+    width: 150px;
     height: 30px;
+    line-height: 30px; 
+    text-align: center; 
     padding: 0px 10px;
     border: none;
-    border: 5px;
     border-radius: 5px;
     background-color: #8cd895;
     color: #00550a;
     font-size: 16px;
+    text-decoration: none;
 }
 
-.container .right .canscroll .friend-table .table th{
+.container .right .canscroll .task-table .table th{
     background-color: #6577ff;
     color: black;
     font-weight: 500;
 }
-.container .right .canscroll .friend-table .table th, td {
+.container .right .canscroll .task-table .table th, td {
 padding: 10px 8px;
 text-align: center;
 }
 
-.container .right .canscroll .friend-table tr:nth-child(odd) {
+.container .right .canscroll .task-table tr:nth-child(odd) {
 background-color: #DFE3FA;;
 }
 
-.container .right .canscroll .friend-table .table tr:hover {
+.container .right .canscroll .task-table .table tr:hover {
 background-color: #DFE3FA;
 }
 
-.container .right .canscroll .friend-table .grup-action-btn{
+.container .right .canscroll .task-table .grup-action-btn{
 display: flex;
 gap: 15px;
 justify-content: center;
 }
 
-.container .right .canscroll .friend-table .grup-action-btn button{
+.container .right .canscroll .task-table .grup-action-btn button{
 width: auto;
 height: 30px;
 padding: 0px 10px;
@@ -358,12 +364,12 @@ border: 5px;
 border-radius: 5px;
 }
 
-.container .right .canscroll .friend-table .edit-btn{
+.container .right .canscroll .task-table .edit-btn{
 background-color: #ffd900;
 color: black;
 }
 
-.container .right .canscroll .friend-table .delete-btn{
+.container .right .canscroll .task-table .delete-btn{
 background-color: #ff3c00;
 color: white;
 }
@@ -378,515 +384,27 @@ color: white;
     gap: 20px;
 }
 
-/* projectCard start */
-.container .right .canscroll main .projectCard {
-    position: relative;
+.logout {
     width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    box-shadow: rgba(255, 255, 255, 0.5) 35px 35px 68px 0px,
-        inset rgba(255, 255, 255, 0.6) -8px -8px 16px 0px,
-        inset rgb(255, 255, 255) 0px 11px 28px 0px;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    grid-row: 1 / 4;
-}
-
-.container .right .canscroll main .projectCard .projectTop {
-    position: relative;
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container .right .canscroll main .projectCard .projectTop h2 {
-    color: #000;
-    font-size: 1.2em;
-    line-height: 18px;
+    height: 50px;
     cursor: pointer;
-}
-
-.container .right .canscroll main .projectCard .projectTop h2 span {
-    color: #999;
-    font-size: 0.8em;
-}
-
-.container .right .canscroll main .projectCard .projectTop .project {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .projectCard .projectTop .projectDots span {
-    color: #000;
-    font-size: 1.8em;
-    font-weight: 500;
-}
-
-.container .right .canscroll main .projectCard .projectProgress {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container .right .canscroll main .projectCard .projectProgress .process {
-    position: relative;
-    padding: 5px 10px;
-    background: #ffcdcd;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .projectCard .projectProgress .process h2 {
-    color: #ff0000;
-    white-space: nowrap;
-    font-size: 0.9em;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-.container .right .canscroll main .projectCard .projectProgress .priority {
-    position: relative;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .projectCard .projectProgress .priority::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    transform: translate(-50%, -50%);
-    background: #ff0000;
-    border-radius: 50%;
-    box-shadow: 0 0 2px #ff0000,
-        0 0 5px #ff000077;
-}
-
-.container .right .canscroll main .projectCard .projectProgress .priority h2 {
-    color: #ff0000;
-    white-space: nowrap;
-    font-size: 0.9em;
-    font-weight: 500;
-}
-
-.container .right .canscroll main .projectCard .task {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
-    margin: 10px 0;
-}
-
-.container .right .canscroll main .projectCard .task h2 {
-    color: #999;
-    font-size: 1em;
-}
-
-.container .right .canscroll main .projectCard .task h2 bold {
-    color: #000;
-}
-.container .right .canscroll main .projectCard .task .line {
-    position: relative;
-    width: 100%;
-    height: 5px;
-    background: rgba(0, 0, 0, .1);
-    border-radius: 50px;
-    z-index: -1;
-    overflow: hidden;
-}
-.container .right .canscroll main .projectCard .task .line::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: calc(100% - 50%);
-    height: 100%;
-    background: #ff6565;
-    z-index: 1;
-    border-radius: 50px;
-}
-
-.container .right .canscroll main .projectCard .due {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .projectCard .due h2 {
-    padding: 0px 10px;
-    border: 2px solid #f5b5f5;
-    border-radius: 5px;
-    font-size: 1.1em;
-    color: #f5b5f5;
-}
-/* projectTop end */
-/* projectCard2 start */
-.container .right .canscroll main .projectCard.projectCard2 {
-    grid-row: 4 / 7;
-}
-.container .right .canscroll main .projectCard.projectCard2 .projectProgress .process {
-    background: #dffde0;
-}
-.container .right .canscroll main .projectCard.projectCard2 .projectProgress .process h2 {
-    color: #69bc72;
-}
-.container .right .canscroll main .projectCard.projectCard2 .projectProgress .priority::before {
-    background: #69bc72;
-    box-shadow: 0 0 2px #69bc72,
-        0 0 5px #69bc7277;
-}
-.container .right .canscroll main .projectCard.projectCard2 .projectProgress .priority h2 {
-    color: #69bc72;
-}
-
-.container .right .canscroll main .projectCard.projectCard2 .task .line::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: calc(16.67%);
-    height: 100%;
-    background: #69bc72;
-    z-index: 1;
-    border-radius: 50px;
-}
-/* projectCard2 end */
-/* myTasks start */
-.container .right .canscroll main .myTasks {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    box-shadow: rgba(255, 255, 255, 0.5) 35px 35px 68px 0px,
-        inset rgba(255, 255, 255, 0.6) -8px -8px 16px 0px,
-        inset rgb(255, 255, 255) 0px 11px 28px 0px;
-    padding: 25px;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    grid-row: 1 / 7;
-    grid-column: 2 / 3;
-}
-
-.container .right .canscroll main .myTasks .tasksHead {
-    position: relative;
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.container .right .canscroll main .myTasks .tasksHead h2 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    line-height: 18px;
-    color: #000;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .myTasks .tasksHead .tasksdelete {
-    position: relative;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .myTasks .tasksHead .tasksdelete span {
-    color: #000;
-    font-size: 1.8em;
-    font-weight: 400;
-}
-
-.container .right .canscroll main .myTasks .tasks {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.container .right .canscroll main .myTasks .tasks ul {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.container .right .canscroll main .myTasks .tasks ul li {
-    position: relative;
-    width: 100%;
-    height: calc(100% / 7);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container .right .canscroll main .myTasks .tasks ul li::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1.5px;
-    background: rgba(0, 0, 0, .1);
-}
-
-.container .right .canscroll main .myTasks .tasks ul li .tasksIconName {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-}
-
-.container .right .canscroll main .myTasks .tasks ul li .tasksIconName .tasksIcon {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .myTasks .tasks ul li .tasksIconName .tasksIcon.done {
-    color: #fff;
-    background: #69bc72;
-}
-
-.container .right .canscroll main .myTasks .tasks ul li .tasksIconName .tasksIcon.notDone {
-    background: #fff;
-    border: 3px solid #999;
-}
-
-.container .right .canscroll main .myTasks .tasks ul li .tasksIconName .tasksName {
-    position: relative;
-    color: #000;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .myTasks .tasks ul li .tasksIconName .tasksName.tasksLine {
-    color: #999;
-    cursor: not-allowed;
-}
-
-.container .right .canscroll main .myTasks .tasks ul li .tasksIconName .tasksName.tasksLine::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1.5px;
-    background: rgba(0, 0, 0, .3);
-}
-
-.container .right .canscroll main .myTasks .tasks ul li .taskIconAdd {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-}
-.container .right .canscroll main .myTasks .tasks ul li .taskIconAdd .AddSymbol{
-    color: #6577ff;
-}
-.container .right .canscroll main .myTasks .tasks ul li .taskIconAdd .tasksNameAdd{
-    font-style: italic;
-    font-weight: 600;
-    font-size: 16px;
-    color: cornflowerblue;
-}
-
-.container .right .canscroll main .myTasks .tasks ul li {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .timeline {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    box-shadow: rgba(255, 255, 255, 0.5) 35px 35px 68px 0px,
-        inset rgba(255, 255, 255, 0.6) -8px -8px 16px 0px,
-        inset rgb(255, 255, 255) 0px 11px 28px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    grid-row: 1 / 7;
-    grid-column: 3 / 3;
-    padding: 20px;
-    overflow: hidden;
-}
-
-.container .right .canscroll main .timeline .timelineHead {
-    position: relative;
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container .right .canscroll main .timeline .timelineHead h2 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    line-height: 18px;
-    color: #000;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .timeline .timelineHead .timelinedelete {
-    position: relative;
-    height: 100%;
-    cursor: pointer;
-}
-
-.container .right .canscroll main .timeline .timelineHead .timelinedelete span {
-    color: #000;
-    font-size: 28px;
-    font-weight: 400;
-}
-
-.container .right .canscroll main .timeline .timeline-btn{
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-
-.container .right .canscroll main .timeline .timeline-btn button{
-    width: 150px;
-    height: 30px;
-    padding: 0px 10px;
+    margin-top: 20px;
+    padding: 10px 50px;
+    background-color: #DFE3FA;
     border: none;
-    border: 5px;
-    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
-.container .right .canscroll main .timeline .Add{
-    border: none;
-    background-color: #a8afff;
-    font-size: 16px;
-    font-style: italic;
-    color: #0B242F;
-}
-
-.container .right .canscroll main .timeline .Edit{
-    border: none;
-    background-color: #fff674;
-    font-size: 16px;
-    font-style: italic;
-    color: #b18500;
-}
-
-.container .right .canscroll main .timeline .timelineVideos {
-    position: relative;
-    width: calc(100% + 40px);
-    height: 100%;
-}
-
-.container .right .canscroll main .timeline .timelineVideos ul {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.container .right .canscroll main .timeline .timelineVideos ul li {
-    position: relative;
-    width: 100%;
-    height: calc(100% / 4);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    transition: .3s ease;
-}
-
-.container .right .canscroll main .timeline .timelineVideos ul li:first-child::before,
-.container .right .canscroll main .timeline .timelineVideos ul li:hover::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    background: #f1f3ff;
-    width: 100%;
-    height: 100%;
-    border-left: 4px solid #6577ff;
-    transition: 0s;
-}
-
-.container .right .canscroll main .timeline .timelineVideos ul li .videoText {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    transition: .3s ease;
-}
-
-.container .right .canscroll main .timeline .timelineVideos ul li .videoText .material-symbols-outlined {
-    color: #999;
-    transition: .3s ease;
-}
-
-.container .right .canscroll main .timeline .timelineVideos ul li:hover .videoText .material-symbols-outlined,
-.container .right .canscroll main .timeline .timelineVideos ul li:first-child .videoText .material-symbols-outlined {
-    color: #6577ff;
-}
-
-.container .right .canscroll main .timeline .timelineVideos ul li:first-child .videoText .text,
-.container .right .canscroll main .timeline .timelineVideos ul li:hover .videoText .text {
-    color: #000;
-    font-weight: 500;
-}
-
-.container .right .canscroll main .timeline .timelineVideos ul li .timelineTime {
-    color: #999;
-    z-index: 1;
-    font-size: 0.9em;
-    transition: .3s ease;
-}
-
-.container .right .canscroll main .timeline .timelineVideos ul li:hover .timelineTime,
-.container .right .canscroll main .timeline .timelineVideos ul li:first-child .timelineTime {
+.logout .material-symbols-outlined {
+    margin-left: 20px;
     color: #000;
 }
+
+.logout:hover {
+    background-color: #6577ff;
+}
+
 
 /* Responsive */
 @media (max-width: 1176px) {
