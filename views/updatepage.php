@@ -5,7 +5,7 @@ require "taskmodel.php";
 $id = $_GET["id"];
 
 // Ambil data task berdasarkan ID
-$taskData = task::getTaskById($id);
+$taskData = TaskModel::getTaskById($id);
 
 // Pastikan data task ditemukan sebelum melanjutkan
 if ($taskData) {
@@ -14,8 +14,6 @@ if ($taskData) {
     $duedate = $taskData['duedate'];
     $status = $taskData['status'];
 } else {
-    // Jika data tidak ditemukan, redirect atau tampilkan pesan kesalahan
-    // Contoh: header("Location: error.php");
     exit("Data not found");
 }
 ?>
@@ -27,14 +25,14 @@ if ($taskData) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Page by 3038</title>
-    <link rel="stylesheet" href="/TUGASCRUD/css/uppage.css">
+    <link rel="stylesheet" href="upage.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="container">
         <h1>Update Your Task</h1>
-        <form id="form" action="http://localhost/TUGASCRUD/php/controllers/update.php" method="post" class="form">
+        <form id="form" action="http://localhost/TUGASCRUD/php/controllers/update.php" method="post" class="form" enctype="multipart/form-data">
             <!-- Tambahkan nilai-nilai default dari database ke dalam input -->
             <div class="form-control">
                 <label for="task">Task</label>
@@ -52,9 +50,13 @@ if ($taskData) {
                 <label for="status">Status</label>
                 <input type="text" id="status" name="status" placeholder="Input here" value="<?php echo $status; ?>" />
             </div>
+            <div class="form-control">
+                <label for="image">Task Image</label>
+                <input type="file" id="taskimage" name="taskimage" accept="image/*" />
+            </div>
             <!-- Sertakan ID sebagai input tersembunyi untuk dikirim ke controller -->
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <button type="update">Update</button>
+            <button type="submit">Update</button>
         </form>
     </div>
 </body>

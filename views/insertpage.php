@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert</title>
-    <link rel="stylesheet" href="/TUGASCRUD/css/ipage.css">
+    <link rel="stylesheet" href="ipage.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
     <div class="container">
         <div class="left">
@@ -28,7 +29,7 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="dashboard.php" class="dashboard">
+                            <a href="/task/dashboard" class="dashboard">
                                 <span class="material-symbols-outlined">
                                     dashboard
                                 </span>
@@ -36,7 +37,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="insertpage.php" class="insertpage">
+                            <a href="/task/insertpage" class="insertpage">
                                 <span class="material-symbols-outlined full">
                                     Add
                                 </span>
@@ -46,30 +47,16 @@
                     </ul>
                 </nav>
             </header>
-            <div class="logout">
+            <a href="/task/login" class="logout">
                 <span class="material-symbols-outlined">
                     logout
                 </span>
                 <h4>Logout</h4>
-            </div>
+            </a>
         </div>
         <div class="right">
-            <div class="top">
-                <div class="searchBx">
-                    <h2>Dashboard</h2>
-                    <div class="inputBx">
-                        <span class="material-symbols-outlined searchOpen">
-                            search
-                        </span>
-                        <input type="text" placeholder="Search...">
-                    </div>
-                </div>
-                <span class="material-symbols-outlined">
-                    notifications
-                </span>
-            </div>
             <div class="bottom">
-                <form id="form" action="http://localhost/TUGASCRUD/php/controllers/insert.php" method="post" class="form">
+                <form id="form" action="/task/create" method="post" class="form" enctype="multipart/form-data">
                     <h2>Insert Your Task Below!</h2>
                     <div class="form-control">
                         <label for="task">Task</label>
@@ -87,24 +74,17 @@
                         <label for="status">Status</label>
                         <input type="text" id="status" name="status" placeholder="Input here" />
                     </div>
-                    <button type="insert">Submit</button>
+                    <div class="form-control">
+                        <label for="image">Task Image</label>
+                        <input type="file" id="taskimage" name="taskimage" accept="image/*" />
+                    </div>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>
     </div>
-    
-    <script>
-    document.getElementById('form').addEventListener('submit', function(event) {
-        var task = document.getElementById('task').value.trim();
-        var collaboration = document.getElementById('collaboration').value.trim();
-        var dueDate = document.getElementById('duedate').value.trim();
-        var status = document.getElementById('status').value.trim();
 
-        if (task === '' || collaboration === '' || dueDate === '' || status === '') {
-            event.preventDefault(); // Prevent form submission
-            alert('Please fill in all fields.'); // Show alert message
-        }
-    });
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
