@@ -1,6 +1,6 @@
 RewriteEngine On
-RewriteBase /task/
+RewriteBase /TugasCRUD-PWEBPR-C-3038/
 RewriteRule ^index\\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /task/index.php [L]
+RewriteRule . /TugasCRUD-PWEBPR-C-3038/index.php [L]

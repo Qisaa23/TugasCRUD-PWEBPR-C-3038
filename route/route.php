@@ -9,7 +9,7 @@ $routes['POST']['/update/{id}'] = 'TaskController@update';
 $routes['GET']['/delete/{id}'] = 'TaskController@delete';
 $routes['GET']['/insertpage'] = 'TaskController@insertpage';
 $routes['GET']['/updatepage/{id}'] = 'TaskController@updatepage';
-$routes['GET']['/detailpage'] = 'TaskController@detailpage';
+$routes['GET']['/detailpage/{id}'] = 'TaskController@detailpage';
 $routes['GET']['/login'] = 'TaskController@login';
 $routes['GET']['/register'] = 'TaskController@register';
 ?>

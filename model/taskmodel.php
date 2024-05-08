@@ -13,6 +13,7 @@ class TaskModel {
             }
         }
         return $data;
+        
     }
 
     static function create($task, $collaboration, $duedate, $status, $taskimage, $conn) {
@@ -24,7 +25,7 @@ class TaskModel {
             $new_image_name = $number.'-'.$taskimage['name'];
     
             if (in_array($extension, $allowed_extensions)) {
-                $destination = 'D:/XAMPP/htdocs/TUGASCRUD/img/' . $new_image_name;
+                $destination = 'D:/XAMPP/htdocs/TugasCRUD-PWEBPR-C-3038/img/' . $new_image_name;
     
                 if (move_uploaded_file($file_tmp, $destination)) {
                     $query = "INSERT INTO tbtask (task, collaboration, duedate, status, image) VALUES (?, ?, ?, ?, ?)";
@@ -77,7 +78,7 @@ class TaskModel {
             $number = rand(1, 999);
             $new_image_name = $number . '-' . $taskimage['name'];
             if (in_array($extension, $allowed_extensions)) {
-                $destination = 'D:/XAMPP/htdocs/TUGASCRUD/img/' . $new_image_name;
+                $destination = 'D:/XAMPP/htdocs/TugasCRUD-PWEBPR-C-3038/img/' . $new_image_name;
                 if (move_uploaded_file($file_tmp, $destination)) {
                     $stmt = $conn->prepare("UPDATE tbtask SET task=?, collaboration=?, duedate=?, Status=?, image=? WHERE id=?");
                     $stmt->bind_param("sssssi", $task, $collaboration, $duedate, $status, $new_image_name, $id);

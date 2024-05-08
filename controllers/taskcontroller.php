@@ -6,14 +6,15 @@ require_once "config/database.php";
 class TaskController{
   
   public function read(){
-    $data = TaskModel::read();
-    loadView('dashboard', $data);
+    
+    $result = TaskModel::read();
+    loadView('dashboard', $result);
   }
   public function create(){
     global $url;
     global $conn;
     $data = TaskModel::create($_POST["task"], $_POST["collaboration"], $_POST["duedate"], $_POST["status"], $_FILES["taskimage"], $conn);
-    header("Location:".$url."/dashboard");
+    header("Location:".$url."dashboard");
   }
   public function getTaskById($id){
     $data = TaskModel::getTaskById($id);
@@ -27,12 +28,12 @@ class TaskController{
         $taskimage = null;
     }
     $data = TaskModel::update($_POST["id"], $_POST["task"], $_POST["collaboration"], $_POST["duedate"], $_POST["status"], $taskimage);
-    header("Location:".$url."/dashboard");
+    header("Location:".$url."dashboard");
   }
   public function delete($id){
     global $url;
     $data = TaskModel::delete($id);
-    header("Location:".$url."/dashboard");
+    header("Location:".$url."dashboard");
   }
   public function insertpage(){
     loadView('insertpage');
@@ -42,12 +43,14 @@ class TaskController{
         $taskimage = $_FILES["taskimage"];
     } else {
         $taskimage = null;
-  }
+    }
     $data = TaskModel::getTaskById($id);
+    // die(print_r($data));
     loadView('updatepage', $data);
   }
-  public function detailpage(){
-    loadView('detailpage');
+  public function detailpage($id){
+    $data = TaskModel::getTaskById($id);
+    loadView('detailpage', $data);
   }
   public function login(){
     loadView('login');

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert</title>
-    <link rel="stylesheet" href="ipage.css">
+    <link rel="stylesheet" href="views/ipage.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -29,7 +29,7 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="/task/dashboard" class="dashboard">
+                            <a href="dashboard" class="dashboard">
                                 <span class="material-symbols-outlined">
                                     dashboard
                                 </span>
@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/task/insertpage" class="insertpage">
+                            <a href="insertpage" class="insertpage">
                                 <span class="material-symbols-outlined full">
                                     Add
                                 </span>
@@ -47,7 +47,7 @@
                     </ul>
                 </nav>
             </header>
-            <a href="/task/login" class="logout">
+            <a href="login" class="logout">
                 <span class="material-symbols-outlined">
                     logout
                 </span>
@@ -56,7 +56,7 @@
         </div>
         <div class="right">
             <div class="bottom">
-                <form id="form" action="/task/create" method="post" class="form" enctype="multipart/form-data">
+                <form id="form" action="create" method="post" class="form" enctype="multipart/form-data">
                     <h2>Insert Your Task Below!</h2>
                     <div class="form-control">
                         <label for="task">Task</label>

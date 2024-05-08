@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page App by 3038</title>
-    <link rel="stylesheet" href="rform.css">
+    <link rel="stylesheet" href="views/rform.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="container">
-        <form id="form" action="/task/login" method="post" class="form">
+        <form id="form" action="login" method="POST" class="form">
             <h1>Register Your Account!</h1>
             <div class="form-control">
                 <label for="username">Username</label>
